@@ -19,7 +19,6 @@ function atmani_setup() {
 
 add_action('after_setup_theme', 'atmani_setup');
 
-
 function atmani_assets() {
 
     $uri = get_template_directory_uri();
@@ -28,24 +27,18 @@ function atmani_assets() {
         'atmani-main',
         $uri . '/assets/css/main.css',
         [],
-        '1.0'
+        filemtime(get_template_directory() . '/assets/css/main.css')
     );
 
-    wp_enqueue_style(
-        'atmani-header',
-        $uri . '/assets/css/header.css',
-        ['atmani-main'],
-        '1.0'
-    );
-
-    wp_enqueue_script(
-        'atmani-main',
-        $uri . '/assets/js/main.js',
-        [],
-        '1.0',
-        true
-    );
-
+    if (file_exists(get_template_directory() . '/assets/js/main.js')) {
+        wp_enqueue_script(
+            'atmani-main',
+            $uri . '/assets/js/main.js',
+            [],
+            filemtime(get_template_directory() . '/assets/js/main.js'),
+            true
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts', 'atmani_assets');
