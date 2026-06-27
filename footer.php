@@ -1,8 +1,4 @@
-<footer>
-
-<p>© <?php echo date('Y'); ?> Atmani Theme</p>
-
-</footer>
+<?php get_template_part( 'template-parts/footer/site', 'footer' ); ?>
 
 <?php wp_footer(); ?>
 

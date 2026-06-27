@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="<?php bloginfo('charset'); ?>">
+<meta charset="<?php bloginfo( 'charset' ); ?>">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,8 +14,11 @@
 
 <body <?php body_class(); ?>>
 
-<header>
+<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'atmani' ); ?></a>
 
-<h1><?php bloginfo('name'); ?></h1>
-
+<header class="site-header">
+	<div class="header-inner">
+		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+		<?php get_template_part( 'template-parts/navigation' ); ?>
+	</div>
 </header>
