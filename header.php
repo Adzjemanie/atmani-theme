@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html <?php language_attributes(); ?>>
 
 <head>
 
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta charset="<?php bloginfo('charset'); ?>">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,11 +13,76 @@
 
 <body <?php body_class(); ?>>
 
-<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'atmani' ); ?></a>
+<?php wp_body_open(); ?>
 
 <header class="site-header">
-	<div class="header-inner">
-		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-		<?php get_template_part( 'template-parts/navigation' ); ?>
-	</div>
+
+    <div class="container">
+
+        <div class="logo">
+
+            <a href="<?php echo esc_url(home_url('/')); ?>">
+
+                <?php
+                if (has_custom_logo()) {
+                    the_custom_logo();
+                } else {
+                    bloginfo('name');
+                }
+                ?>
+
+            </a>
+
+        </div>
+
+        <nav class="main-navigation">
+
+            <?php
+
+            wp_nav_menu(array(
+
+                'theme_location' => 'primary',
+
+                'container'      => false,
+
+                'menu_class'     => 'main-menu',
+
+                'fallback_cb'    => false,
+
+            ));
+
+            ?>
+
+        </nav>
+
+        <button class="menu-toggle">
+
+            ☰
+
+        </button>
+
+    </div>
+
 </header>
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <h1><?php bloginfo('name'); ?></h1>
+
+            <p><?php bloginfo('description'); ?></p>
+
+            <a href="#featured" class="button">
+
+                Discover Stories
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>

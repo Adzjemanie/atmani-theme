@@ -1,16 +1,221 @@
-/*
-Theme Name: Atmani Theme
-Theme URI: https://github.com/Adzjemanie/atmani-theme
-Author: Atmani
-Author URI: https://atmani.nl
-Description: A cinematic WordPress theme for storytelling, music, travel and photography.
-Version: 0.1.0
-Requires at least: 6.5
-Tested up to: 6.8
-Requires PHP: 8.1
-License: GPL v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: atmani
-*/
+.site-header{
 
-/* Theme stylesheet is loaded from assets/css/theme.css */
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+background:rgba(10,10,10,.35);
+
+backdrop-filter:blur(14px);
+
+transition:.3s;
+
+}
+
+.site-header .container{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:20px 40px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo img{
+
+max-height:46px;
+
+width:auto;
+
+}
+
+.main-menu{
+
+display:flex;
+
+gap:40px;
+
+list-style:none;
+
+margin:0;
+
+padding:0;
+
+}
+
+.main-menu li{
+
+position:relative;
+
+}
+
+.main-menu a{
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.main-menu a:hover{
+
+color:#c79d55;
+
+}
+
+.main-menu ul{
+
+display:none;
+
+position:absolute;
+
+top:40px;
+
+left:0;
+
+background:#111;
+
+padding:15px;
+
+border-radius:12px;
+
+list-style:none;
+
+min-width:220px;
+
+}
+
+.main-menu li:hover>ul{
+
+display:block;
+
+}
+
+.main-menu ul li{
+
+padding:8px 0;
+
+}
+
+.hero{
+
+height:100vh;
+
+background:url("../images/hero.jpg") center center/cover;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.hero-overlay{
+
+width:100%;
+
+height:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75));
+
+}
+
+.hero-content{
+
+text-align:center;
+
+color:#fff;
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:24px;
+
+opacity:.9;
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:16px 36px;
+
+background:#c79d55;
+
+color:#111;
+
+border-radius:50px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+}
+
+.menu-toggle{
+
+display:none;
+
+}
+
+@media(max-width:900px){
+
+.main-navigation{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+background:none;
+
+border:none;
+
+color:#fff;
+
+font-size:34px;
+
+cursor:pointer;
+
+}
+
+}
